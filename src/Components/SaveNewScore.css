@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+.new-score h2{
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.name-input {
+    font-family: Lora;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #880606;
+    background-color: #2413084f;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 0.3rem 0.5rem ;
+}
+
+::placeholder { 
+    color: #2413084f;
+    opacity: 2; 
+  }
+
+.name-submit-btn{
+    cursor: pointer;
+    font-family: Lora;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #880606;
+    background-color: #ffa705;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    margin-bottom: 1rem;
+    padding: 0.3rem 0.5rem ;
+    transition-duration: 0.2s;
+}
+
+.name-submit-btn:hover{
+    background-color: #ffc352;
+}
+
+.name-submit-btn:active {
+    box-shadow: 0px;
+    transform: translateY(1px);
+}
