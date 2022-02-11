@@ -1,0 +1,38 @@
+.game-paused-window{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.274);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 90;
+    font-family: 'Rye'; 
+    font-weight: normal;
+}
+
+.game-paused-container {
+    position: relative;
+    background-color: #AC714A;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.568);
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 2.3rem;
+    margin: 0;  
+    color: #ffa705;
+    padding: 0.5rem 0;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin: 0;  
+    color: rgba(0, 0, 0, 0.877);
+}
+
