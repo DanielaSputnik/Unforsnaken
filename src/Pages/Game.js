@@ -6,8 +6,8 @@ import Scoreboard from '../Components/Scoreboard';
 import './Game.css';
 
 const BOARD_WIDTH = 18;
-const INITIAL_SNAKE = [38]
-const INITIAL_APPLE = 45;
+const INITIAL_SNAKE = [39]
+const INITIAL_APPLE = 44;
 const SCORE_INCREASE = 5;
 const VALID_POSITIONS = [...Array(BOARD_WIDTH*BOARD_WIDTH).keys()];
 const FAST_SPEED = 50;
@@ -72,6 +72,7 @@ function Game() {
         setGamePaused(false);
     } else if (applePosition !== currentSnakeHead) {
         snakeBody.splice(-1,1); 
+        newSnakeBody = [...snakeBody];
         setGamePaused(false);
     } else {
         handleEatApple();
@@ -84,25 +85,29 @@ function Game() {
       } else  
       newSnakeBody = [currentSnakeHead+1, ...snakeBody];
     };
+
     if (direction === 'left') {
       if (currentSnakeHead % BOARD_WIDTH === 0) {
         handleCrash();
       } else  
       newSnakeBody = [currentSnakeHead-1, ...snakeBody];
     };
+    
     if (direction === 'up') {
       newSnakeBody = [currentSnakeHead-BOARD_WIDTH, ...snakeBody];
     };
+
     if (direction === 'down' ) {
       newSnakeBody = [currentSnakeHead+BOARD_WIDTH, ...snakeBody];
     };
-
-    setSnakeBody(newSnakeBody);
-    setCurrentSnakeHead(newSnakeBody[0]);  
+    
+      setSnakeBody(newSnakeBody);
+      setCurrentSnakeHead(newSnakeBody[0]);  
 
     if (snakeBody.slice(1).includes(newSnakeBody[0]) || !VALID_POSITIONS.includes(newSnakeBody[0]) ) {
       handleCrash();
     };
+
   }
   
   useEffect(()=> {
@@ -112,7 +117,7 @@ function Game() {
       }, isFastSpeed ? FAST_SPEED : NORMAL_SPEED);
       return () => clearInterval(timer)
     }
-  }, [moveSnake])
+  }, [moveSnake, gameOver, isFastSpeed])
   
   const handleCrash = () => {
     setSnakeBody(INITIAL_SNAKE);
@@ -182,7 +187,7 @@ function Game() {
       setDirection={setDirection}
     ></GameOverWindow>
     
-    <h1 className="game-title">UNFORSNAKEN</h1>
+    <h1 className="title">UNFORSNAKEN</h1>
     <div className="game-container">
       <div className='game-board-container'>
         <div className="game-board">
@@ -240,8 +245,8 @@ function Game() {
               Scoreboard
         </button>
 
-        </div>
       </div>
+    </div>
     </>
   );
 }

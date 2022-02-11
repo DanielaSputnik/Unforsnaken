@@ -10,7 +10,7 @@ const Scoreboard = ({listSize, refreshOn}) => {
         setScoreBoardData(data);
     }
 
-    const descendingScores = scoreBoardData?.sort((a, b) => b.playerScore - a.playerScore);
+    const descendingScores = scoreBoardData? [...scoreBoardData].sort((a, b) => b.playerScore - a.playerScore) : null;
 
     useEffect(() => {
         fetchData()

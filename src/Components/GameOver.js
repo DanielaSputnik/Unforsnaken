@@ -18,11 +18,11 @@ const GameOverWindow = (props) => {
             playerName : newName,
             playerScore: props.playerScore,
         };
-        // axios.post('http://localhost:8080/api/scores', scoreData)
-        //     .catch(error => {alert('Ooops, something went wrong, please refresh the page.')} 
-        //             //Log the error into a log
-        //             )
-        //     .then(setNewName('ANONYMOUS'));
+        axios.post('http://localhost:8080/api/scores', scoreData)
+            .catch(error => {alert('Ooops, something went wrong, please refresh the page.')} 
+                    //Log the error into a log
+                    )
+            .then(setNewName('ANONYMOUS'));
     };
 
 

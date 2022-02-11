@@ -1,22 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import Scoreboard from '../Components/Scoreboard';
+import './Scoreboardpage.css';
 
 
 function ScoreboardPage () {
   const navigate = useNavigate();
-  return (
-  <div>
-    <h1 className='game-title'>SCOREBOARD</h1>
+  return ( 
+  <>
+  <h1>SCOREBOARD</h1>
+  <div className='scoreboard-container'>
+   
     <button 
       className='btn'
       onClick={()=> navigate('/')}>Back to game</button>
-      <div className='game-stats-scoreboard'> 
+      <div className='scoreboard'> 
       <table>
         <thead> 
           <tr>
-              <th>#</th>
-              <th>Player</th>
-              <th>Score</th>
+            <th>#</th>
+            <th>Player</th>
+            <th>Score</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +28,7 @@ function ScoreboardPage () {
       </table>
     </div>
   </div>
-  );
+ </> );
 };
 
 export default ScoreboardPage;

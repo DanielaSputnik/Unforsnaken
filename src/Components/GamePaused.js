@@ -5,7 +5,7 @@ const GamePausedWindow = (props) => {
         <>
           <div className='game-paused-window'>
             <div className='game-paused-container'>
-                <h4>GAME PAUSED</h4>
+                <h4> GAME PAUSED </h4>
                 <h3> PRESS ANY ARROW TO CONTINUE</h3>
             </div>
           </div>
